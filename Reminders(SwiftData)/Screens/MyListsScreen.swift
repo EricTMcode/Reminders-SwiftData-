@@ -9,6 +9,8 @@ import SwiftUI
 
 struct MyListsScreen: View {
 
+    @State private var isPresented = false
+
     let myLists = ["Reminders", "Groceries", "Entertainment"]
 
     var body: some View {
@@ -26,7 +28,7 @@ struct MyListsScreen: View {
             }
 
             Button {
-
+                isPresented = true
             } label: {
                 Text("Add List")
                     .foregroundStyle(.blue)
@@ -35,6 +37,11 @@ struct MyListsScreen: View {
             .listRowSeparator(.hidden)
         }
         .listStyle(.plain)
+        .sheet(isPresented: $isPresented) {
+            NavigationStack {
+                AddMyListScreen()
+            }
+        }
     }
 }
 

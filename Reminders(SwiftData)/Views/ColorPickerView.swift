@@ -36,5 +36,5 @@ struct ColorPickerView: View {
 }
 
 #Preview {
-    ColorPickerView(selectedColor: .constant(.yellow))
+    ColorPickerView(selectedColor: .constant(.blue))
 }

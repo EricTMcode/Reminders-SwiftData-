@@ -11,7 +11,10 @@ import SwiftUI
 struct Reminders_SwiftData_App: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            NavigationStack {
+                MyListsScreen()
+            }
+            .modelContainer(for: MyList.self)
         }
     }
 }

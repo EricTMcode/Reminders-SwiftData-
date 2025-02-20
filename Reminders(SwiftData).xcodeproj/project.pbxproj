@@ -12,6 +12,8 @@
 		07C0BF382D6757FB002EFF73 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 07C0BF302D6757FB002EFF73 /* Preview Assets.xcassets */; };
 		07C0BF392D6757FB002EFF73 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 07C0BF322D6757FB002EFF73 /* Assets.xcassets */; };
 		07C0BF3C2D67581A002EFF73 /* MyListsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07C0BF3B2D67581A002EFF73 /* MyListsScreen.swift */; };
+		07C0BF3E2D675983002EFF73 /* AddMyListScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07C0BF3D2D675983002EFF73 /* AddMyListScreen.swift */; };
+		07C0BF412D675A65002EFF73 /* ColorPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07C0BF402D675A65002EFF73 /* ColorPickerView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,6 +23,8 @@
 		07C0BF332D6757FB002EFF73 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		07C0BF342D6757FB002EFF73 /* Reminders_SwiftData_App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reminders_SwiftData_App.swift; sourceTree = "<group>"; };
 		07C0BF3B2D67581A002EFF73 /* MyListsScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyListsScreen.swift; sourceTree = "<group>"; };
+		07C0BF3D2D675983002EFF73 /* AddMyListScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddMyListScreen.swift; sourceTree = "<group>"; };
+		07C0BF402D675A65002EFF73 /* ColorPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorPickerView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +65,7 @@
 		07C0BF352D6757FB002EFF73 /* Reminders(SwiftData) */ = {
 			isa = PBXGroup;
 			children = (
+				07C0BF3F2D675A4C002EFF73 /* Views */,
 				07C0BF3A2D6757FE002EFF73 /* Screens */,
 				07C0BF312D6757FB002EFF73 /* Preview Content */,
 				07C0BF322D6757FB002EFF73 /* Assets.xcassets */,
@@ -74,8 +79,17 @@
 			isa = PBXGroup;
 			children = (
 				07C0BF3B2D67581A002EFF73 /* MyListsScreen.swift */,
+				07C0BF3D2D675983002EFF73 /* AddMyListScreen.swift */,
 			);
 			path = Screens;
+			sourceTree = "<group>";
+		};
+		07C0BF3F2D675A4C002EFF73 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				07C0BF402D675A65002EFF73 /* ColorPickerView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -154,6 +168,8 @@
 				07C0BF3C2D67581A002EFF73 /* MyListsScreen.swift in Sources */,
 				07C0BF362D6757FB002EFF73 /* ContentView.swift in Sources */,
 				07C0BF372D6757FB002EFF73 /* Reminders_SwiftData_App.swift in Sources */,
+				07C0BF3E2D675983002EFF73 /* AddMyListScreen.swift in Sources */,
+				07C0BF412D675A65002EFF73 /* ColorPickerView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

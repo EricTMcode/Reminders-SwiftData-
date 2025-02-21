@@ -16,6 +16,7 @@
 		07C0BF442D67606A002EFF73 /* MyList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07C0BF432D67606A002EFF73 /* MyList.swift */; };
 		07C0BF462D67615B002EFF73 /* PreviewContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07C0BF452D67615B002EFF73 /* PreviewContainer.swift */; };
 		07C0BF492D676317002EFF73 /* Color+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07C0BF482D676317002EFF73 /* Color+Extensions.swift */; };
+		07DFC1C02D68BCEC00FBADBF /* Reminder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07DFC1BF2D68BCEC00FBADBF /* Reminder.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +30,7 @@
 		07C0BF432D67606A002EFF73 /* MyList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyList.swift; sourceTree = "<group>"; };
 		07C0BF452D67615B002EFF73 /* PreviewContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewContainer.swift; sourceTree = "<group>"; };
 		07C0BF482D676317002EFF73 /* Color+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Extensions.swift"; sourceTree = "<group>"; };
+		07DFC1BF2D68BCEC00FBADBF /* Reminder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reminder.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +104,7 @@
 			isa = PBXGroup;
 			children = (
 				07C0BF432D67606A002EFF73 /* MyList.swift */,
+				07DFC1BF2D68BCEC00FBADBF /* Reminder.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -194,6 +197,7 @@
 				07C0BF412D675A65002EFF73 /* ColorPickerView.swift in Sources */,
 				07C0BF462D67615B002EFF73 /* PreviewContainer.swift in Sources */,
 				07C0BF442D67606A002EFF73 /* MyList.swift in Sources */,
+				07DFC1C02D68BCEC00FBADBF /* Reminder.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

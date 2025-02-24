@@ -28,8 +28,11 @@ struct MyListDetailScreen: View {
 
     var body: some View {
         VStack {
-            List(myList.reminders) { reminder in
-                Text(reminder.title)
+            List {
+                ForEach(myList.reminders) { reminder in
+                    Text(reminder.title)
+                }
+                .onDelete(perform: deleteReminder)
             }
 
             Spacer()
@@ -53,6 +56,13 @@ struct MyListDetailScreen: View {
                 saveReminder()
             }
             .disabled(!isFormValid)
+        }
+    }
+
+    private func deleteReminder(offsets: IndexSet) {
+        withAnimation {
+            offsets.map { myList.reminders[$0] }.forEach(modelContext.delete)
+            try? modelContext.save()
         }
     }
 }

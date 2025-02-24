@@ -15,7 +15,7 @@ class Reminder {
     var notes: String?
     var isCompleted: Bool
     var reminderDate: Date?
-    var remminderTime: Date?
+    var reminderTime: Date?
 
     var list: MyList?
 
@@ -24,6 +24,6 @@ class Reminder {
         self.notes = notes
         self.isCompleted = isCompleted
         self.reminderDate = reminderDate
-        self.remminderTime = remminderTime
+        self.reminderTime = remminderTime
     }
 }

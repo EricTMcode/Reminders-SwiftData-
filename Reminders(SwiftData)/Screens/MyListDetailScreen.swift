@@ -30,7 +30,17 @@ struct MyListDetailScreen: View {
         VStack {
             List {
                 ForEach(myList.reminders) { reminder in
-                    Text(reminder.title)
+//                    Text(reminder.title)
+                    RemindersCellView(reminder: reminder, isSelected: false) { event in
+                        switch event {
+                        case .onChecked(let reminder, let checked):
+                            print("OnChecked")
+                        case .onSelect(let reminder):
+                            print("onSelect")
+                        case .onInfoSelected(let reminder):
+                            print("onInfoSelected")
+                        }
+                    }
                 }
                 .onDelete(perform: deleteReminder)
             }

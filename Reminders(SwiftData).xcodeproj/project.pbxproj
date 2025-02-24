@@ -19,6 +19,7 @@
 		07DFC1C02D68BCEC00FBADBF /* Reminder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07DFC1BF2D68BCEC00FBADBF /* Reminder.swift */; };
 		07DFC1C22D68BE3000FBADBF /* MyListDetailScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07DFC1C12D68BE3000FBADBF /* MyListDetailScreen.swift */; };
 		07DFC1C42D68C24F00FBADBF /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07DFC1C32D68C24F00FBADBF /* String+Extensions.swift */; };
+		07DFC1F62D6CB61100FBADBF /* RemindersCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07DFC1F52D6CB61100FBADBF /* RemindersCellView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +36,7 @@
 		07DFC1BF2D68BCEC00FBADBF /* Reminder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reminder.swift; sourceTree = "<group>"; };
 		07DFC1C12D68BE3000FBADBF /* MyListDetailScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyListDetailScreen.swift; sourceTree = "<group>"; };
 		07DFC1C32D68C24F00FBADBF /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
+		07DFC1F52D6CB61100FBADBF /* RemindersCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemindersCellView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +103,7 @@
 			isa = PBXGroup;
 			children = (
 				07C0BF402D675A65002EFF73 /* ColorPickerView.swift */,
+				07DFC1F52D6CB61100FBADBF /* RemindersCellView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -196,6 +199,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				07DFC1F62D6CB61100FBADBF /* RemindersCellView.swift in Sources */,
 				07DFC1C42D68C24F00FBADBF /* String+Extensions.swift in Sources */,
 				07C0BF3C2D67581A002EFF73 /* MyListsScreen.swift in Sources */,
 				07C0BF372D6757FB002EFF73 /* Reminders_SwiftData_App.swift in Sources */,

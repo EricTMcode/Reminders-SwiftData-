@@ -29,6 +29,6 @@ struct SampleData {
     }
 
     static var reminders: [Reminder] {
-        return [Reminder(title: "Reminder 1"), Reminder(title: "Reminder 2", notes: "This is a note for reminder 2")]
+        return [Reminder(title: "Reminder 1", notes: "This is a note for reminder 1", reminderDate: Date(), remminderTime: Date()), Reminder(title: "Reminder 2", notes: "This is a note for reminder 2", reminderDate: Date(), remminderTime: Date())]
     }
 }

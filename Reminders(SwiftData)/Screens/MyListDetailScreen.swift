@@ -14,6 +14,8 @@ struct MyListDetailScreen: View {
     
     @State private var reminderTitle = ""
     @State private var isNewReminderPresented = false
+    @State private var selectedReminder: Reminder?
+    @State private var showReminderEditScreen = false
 
     private var isFormValid: Bool {
         !reminderTitle.isEmptyOrWhitespace
@@ -26,19 +28,23 @@ struct MyListDetailScreen: View {
         reminderTitle = ""
     }
 
+    private func isReminderSelectect(_ reminder: Reminder) -> Bool {
+        reminder.persistentModelID == selectedReminder?.persistentModelID
+    }
+
     var body: some View {
         VStack {
             List {
                 ForEach(myList.reminders) { reminder in
-//                    Text(reminder.title)
-                    RemindersCellView(reminder: reminder, isSelected: false) { event in
+                    RemindersCellView(reminder: reminder, isSelected: isReminderSelectect(reminder)) { event in
                         switch event {
                         case .onChecked(let reminder, let checked):
-                            print("OnChecked")
+                            reminder.isCompleted = checked
                         case .onSelect(let reminder):
-                            print("onSelect")
+                            selectedReminder = reminder
                         case .onInfoSelected(let reminder):
-                            print("onInfoSelected")
+                            showReminderEditScreen = true
+                            selectedReminder = reminder
                         }
                     }
                 }
@@ -59,6 +65,13 @@ struct MyListDetailScreen: View {
             .padding()
         }
         .navigationTitle(myList.name)
+        .sheet(isPresented: $showReminderEditScreen) {
+            if let selectedReminder {
+                NavigationStack {
+                    ReminderEditScreen(reminder: selectedReminder)
+                }
+            }
+        }
         .alert("New Reminder", isPresented: $isNewReminderPresented) {
             TextField("", text: $reminderTitle)
             Button("Cancel", role: .cancel) { }

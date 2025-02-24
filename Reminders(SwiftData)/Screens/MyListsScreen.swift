@@ -9,7 +9,7 @@ import SwiftUI
 import SwiftData
 
 struct MyListsScreen: View {
-
+    @Environment(\.modelContext) private var modelContext
     @Query private var myLists: [MyList]
 
     @State private var isPresented = false
@@ -32,6 +32,7 @@ struct MyListsScreen: View {
                     }
                 }
             }
+            .onDelete(perform: deleteCategories)
 
             Button {
                 isPresented = true
@@ -47,6 +48,13 @@ struct MyListsScreen: View {
             NavigationStack {
                 AddMyListScreen()
             }
+        }
+    }
+
+    private func deleteCategories(offsets: IndexSet) {
+        withAnimation {
+            offsets.map { myLists[$0] }.forEach(modelContext.delete)
+            try? modelContext.save()
         }
     }
 }

@@ -13,9 +13,8 @@ struct Reminders_SwiftData_App: App {
         WindowGroup {
             NavigationStack {
                 MyListsScreen()
-                    .modelContainer(for: MyList.self)
             }
-
+            .modelContainer(for: [MyList.self, Reminder.self])
         }
     }
 }

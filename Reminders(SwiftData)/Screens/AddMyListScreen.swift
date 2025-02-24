@@ -9,8 +9,8 @@ import SwiftUI
 
 struct AddMyListScreen: View {
 
-    @Environment(\.dismiss) private var dismiss
     @Environment(\.modelContext) private var modelContext
+    @Environment(\.dismiss) private var dismiss
 
     @State private var color: Color = .blue
     @State private var listName = ""
@@ -45,14 +45,8 @@ struct AddMyListScreen: View {
 
                     let myList = MyList(name: listName, colorCode: hex)
                     modelContext.insert(myList)
-
-                    do {
-                        try modelContext.save()
-                    } catch {
-                        print("Failed to save model context: \(error)")
-                    }
+                    try? modelContext.save()
                     dismiss()
-
                 }
             }
         }

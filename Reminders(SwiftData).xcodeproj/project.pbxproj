@@ -17,6 +17,8 @@
 		07C0BF462D67615B002EFF73 /* PreviewContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07C0BF452D67615B002EFF73 /* PreviewContainer.swift */; };
 		07C0BF492D676317002EFF73 /* Color+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07C0BF482D676317002EFF73 /* Color+Extensions.swift */; };
 		07DFC1C02D68BCEC00FBADBF /* Reminder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07DFC1BF2D68BCEC00FBADBF /* Reminder.swift */; };
+		07DFC1C22D68BE3000FBADBF /* MyListDetailScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07DFC1C12D68BE3000FBADBF /* MyListDetailScreen.swift */; };
+		07DFC1C42D68C24F00FBADBF /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07DFC1C32D68C24F00FBADBF /* String+Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +33,8 @@
 		07C0BF452D67615B002EFF73 /* PreviewContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewContainer.swift; sourceTree = "<group>"; };
 		07C0BF482D676317002EFF73 /* Color+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Extensions.swift"; sourceTree = "<group>"; };
 		07DFC1BF2D68BCEC00FBADBF /* Reminder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reminder.swift; sourceTree = "<group>"; };
+		07DFC1C12D68BE3000FBADBF /* MyListDetailScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyListDetailScreen.swift; sourceTree = "<group>"; };
+		07DFC1C32D68C24F00FBADBF /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +91,7 @@
 			isa = PBXGroup;
 			children = (
 				07C0BF3B2D67581A002EFF73 /* MyListsScreen.swift */,
+				07DFC1C12D68BE3000FBADBF /* MyListDetailScreen.swift */,
 				07C0BF3D2D675983002EFF73 /* AddMyListScreen.swift */,
 			);
 			path = Screens;
@@ -113,6 +118,7 @@
 			isa = PBXGroup;
 			children = (
 				07C0BF482D676317002EFF73 /* Color+Extensions.swift */,
+				07DFC1C32D68C24F00FBADBF /* String+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -190,12 +196,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				07DFC1C42D68C24F00FBADBF /* String+Extensions.swift in Sources */,
 				07C0BF3C2D67581A002EFF73 /* MyListsScreen.swift in Sources */,
 				07C0BF372D6757FB002EFF73 /* Reminders_SwiftData_App.swift in Sources */,
 				07C0BF492D676317002EFF73 /* Color+Extensions.swift in Sources */,
 				07C0BF3E2D675983002EFF73 /* AddMyListScreen.swift in Sources */,
 				07C0BF412D675A65002EFF73 /* ColorPickerView.swift in Sources */,
 				07C0BF462D67615B002EFF73 /* PreviewContainer.swift in Sources */,
+				07DFC1C22D68BE3000FBADBF /* MyListDetailScreen.swift in Sources */,
 				07C0BF442D67606A002EFF73 /* MyList.swift in Sources */,
 				07DFC1C02D68BCEC00FBADBF /* Reminder.swift in Sources */,
 			);

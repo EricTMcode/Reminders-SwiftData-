@@ -35,7 +35,7 @@ struct MyListDetailScreen: View {
     var body: some View {
         VStack {
             List {
-                ForEach(myList.reminders) { reminder in
+                ForEach(myList.reminders.filter { !$0.isCompleted }) { reminder in
                     RemindersCellView(reminder: reminder, isSelected: isReminderSelectect(reminder)) { event in
                         switch event {
                         case .onChecked(let reminder, let checked):

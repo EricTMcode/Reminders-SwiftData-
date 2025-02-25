@@ -54,7 +54,7 @@ struct ReminderEditScreen: View {
                 }
 
                 if showCalendar {
-                    DatePicker("Select Date", selection: $reminderDate, displayedComponents: .date)
+                    DatePicker("Select Date", selection: $reminderDate, in: .now..., displayedComponents: .date)
                 }
 
                 HStack {

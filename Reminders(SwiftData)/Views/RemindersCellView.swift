@@ -16,13 +16,10 @@ enum ReminderCellEvents {
 
 struct RemindersCellView: View {
 
-    @Environment(\.modelContext) private var modelContext
 
     let reminder: Reminder
     let isSelected: Bool
     let onEvent: (ReminderCellEvents) -> Void
-
-    let delay = Delay()
 
     @State private var checked = false
 
@@ -43,15 +40,7 @@ struct RemindersCellView: View {
                 .padding(.trailing, 5)
                 .onTapGesture {
                     checked.toggle()
-
-                    // cancel the old task
-                    delay.canel()
-
-                    // call onCheckedChange inside the delay
-                    delay.performWork {
-                        onEvent(.onChecked(reminder, checked))
-                        try?modelContext.save()
-                    }
+                    onEvent(.onChecked(reminder, checked))
                 }
 
             VStack(alignment: .leading) {

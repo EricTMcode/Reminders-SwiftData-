@@ -24,7 +24,7 @@ class Delay {
         DispatchQueue.main.asyncAfter(deadline: .now() + seconds, execute: workItem!)
     }
 
-    func canel() {
+    func cancel() {
         workItem?.cancel()
     }
 }

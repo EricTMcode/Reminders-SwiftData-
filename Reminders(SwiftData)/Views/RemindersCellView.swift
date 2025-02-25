@@ -22,6 +22,11 @@ struct RemindersCellView: View {
 
     @State private var checked = false
 
+    private func formatReminderDate(_ date: Date) -> String {
+
+        return ""
+    }
+
     var body: some View {
         HStack(alignment: .top) {
             Image(systemName: checked ? "circle.inset.filled" : "circle")

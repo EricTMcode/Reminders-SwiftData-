@@ -16,6 +16,8 @@ enum ReminderCellEvents {
 
 struct RemindersCellView: View {
 
+    @Environment(\.modelContext) private var modelContext
+
     let reminder: Reminder
     let isSelected: Bool
     let onEvent: (ReminderCellEvents) -> Void
@@ -48,6 +50,7 @@ struct RemindersCellView: View {
                     // call onCheckedChange inside the delay
                     delay.performWork {
                         onEvent(.onChecked(reminder, checked))
+                        try?modelContext.save()
                     }
                 }
 

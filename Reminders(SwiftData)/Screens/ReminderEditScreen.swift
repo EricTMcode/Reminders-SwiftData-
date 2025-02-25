@@ -9,7 +9,7 @@ import SwiftUI
 import SwiftData
 
 struct ReminderEditScreen: View {
-
+    @Environment(\.modelContext) private var modelContext
     @Environment(\.dismiss) private var dismiss
 
     let reminder: Reminder
@@ -27,6 +27,7 @@ struct ReminderEditScreen: View {
         reminder.notes = notes.isEmpty ? nil : notes
         reminder.reminderDate = showCalendar ? reminderDate : nil
         reminder.reminderTime = showTime ? reminderTime : nil
+        try?modelContext.save()
 
     }
 

@@ -15,6 +15,8 @@ struct AddMyListScreen: View {
     @State private var color: Color = .blue
     @State private var listName = ""
 
+    var myList: MyList? = nil
+
 
     var body: some View {
         VStack {

@@ -14,7 +14,23 @@ struct MyListsScreen: View {
     
     @State private var isPresented = false
     @State private var selectedList: MyList?
-    
+
+    @State private var actionSheet: MyListScreenSheets?
+
+    enum MyListScreenSheets: Identifiable {
+        case newList
+        case editList(MyList)
+
+        var id: Int {
+            switch self {
+            case .newList:
+                return 1
+            case .editList(let myList):
+                return myList.hashValue
+            }
+        }
+    }
+
     var body: some View {
         List {
             Text("My Lists")
@@ -29,14 +45,14 @@ struct MyListsScreen: View {
                             selectedList = myList
                         }
                         .onLongPressGesture(minimumDuration: 0.5) {
-                            print("OnLongPressGesture")
+                            actionSheet = .editList(myList)
                         }
                 }
             }
             .onDelete(perform: deleteCategories)
             
             Button {
-                isPresented = true
+                actionSheet = .newList
             } label: {
                 Text("Add List")
                     .foregroundStyle(.blue)
@@ -48,9 +64,16 @@ struct MyListsScreen: View {
             MyListDetailScreen(myList: myList)
         }
         .listStyle(.plain)
-        .sheet(isPresented: $isPresented) {
-            NavigationStack {
-                AddMyListScreen()
+        .sheet(item: $actionSheet) { actionSheet in
+            switch actionSheet {
+            case .newList:
+                NavigationStack {
+                    AddMyListScreen()
+                }
+            case .editList(let myList):
+                NavigationStack {
+                    AddMyListScreen(myList: myList)
+                }
             }
         }
     }

@@ -11,32 +11,30 @@ import SwiftData
 struct MyListsScreen: View {
     @Environment(\.modelContext) private var modelContext
     @Query private var myLists: [MyList]
-
+    
     @State private var isPresented = false
     @State private var selectedList: MyList?
-
+    
     var body: some View {
         List {
             Text("My Lists")
                 .font(.largeTitle)
                 .bold()
-
+            
             ForEach(myLists) { myList in
-                NavigationLink {
-                    MyListDetailScreen(myList: myList)
-                } label: {
+                NavigationLink(value: myList) {
                     MyListCellView(myList: myList)
                         .contentShape(Rectangle())
                         .onTapGesture {
                             selectedList = myList
                         }
                         .onLongPressGesture(minimumDuration: 0.5) {
-                            print("OnLongGesture")
+                            print("OnLongPressGesture")
                         }
                 }
             }
             .onDelete(perform: deleteCategories)
-
+            
             Button {
                 isPresented = true
             } label: {
@@ -47,7 +45,7 @@ struct MyListsScreen: View {
             .listRowSeparator(.hidden)
         }
         .navigationDestination(item: $selectedList) { myList in
-            Text(myList.name)
+            MyListDetailScreen(myList: myList)
         }
         .listStyle(.plain)
         .sheet(isPresented: $isPresented) {
@@ -56,7 +54,7 @@ struct MyListsScreen: View {
             }
         }
     }
-
+    
     private func deleteCategories(offsets: IndexSet) {
         withAnimation {
             offsets.map { myLists[$0] }.forEach(modelContext.delete)

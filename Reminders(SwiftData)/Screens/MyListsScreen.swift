@@ -17,6 +17,8 @@ struct MyListsScreen: View {
 
     @State private var actionSheet: MyListScreenSheets?
 
+    @Query private var reminders: [Reminder]
+
     enum MyListScreenSheets: Identifiable {
         case newList
         case editList(MyList)
@@ -29,6 +31,30 @@ struct MyListsScreen: View {
                 return myList.hashValue
             }
         }
+    }
+
+    private var inCompleteReminders: [Reminder] {
+        reminders.filter { !$0.isCompleted }
+    }
+
+    private var todaysReminders: [Reminder] {
+        reminders.filter {
+            guard let reminderDate = $0.reminderDate else {
+                return false
+            }
+
+            return reminderDate.isToday && !$0.isCompleted
+        }
+    }
+
+    private var scheduleReminders: [Reminder] {
+        reminders.filter {
+            $0.reminderDate != nil && !$0.isCompleted
+        }
+    }
+
+    private var completedReminders: [Reminder] {
+        reminders.filter { $0.isCompleted }
     }
 
     var body: some View {

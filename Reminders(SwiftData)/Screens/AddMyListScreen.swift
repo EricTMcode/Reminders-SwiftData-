@@ -31,6 +31,12 @@ struct AddMyListScreen: View {
             ColorPickerView(selectedColor: $color)
 
         }
+        .onAppear {
+            if let myList {
+                listName = myList.name
+                color = Color(hex: myList.colorCode)
+            }
+        }
         .navigationTitle("New List")
         .navigationBarTitleDisplayMode(.inline)
         .toolbar {
@@ -42,12 +48,15 @@ struct AddMyListScreen: View {
 
             ToolbarItem(placement: .topBarTrailing) {
                 Button("Done") {
-
-                    guard let hex = color.toHex() else { return }
-
-                    let myList = MyList(name: listName, colorCode: hex)
-                    modelContext.insert(myList)
-                    try? modelContext.save()
+                    if let myList {
+                        myList.name = listName
+                        myList.colorCode = color.toHex() ?? ""
+                    } else {
+                        guard let hex = color.toHex() else { return }
+                        let myList = MyList(name: listName, colorCode: hex)
+                        modelContext.insert(myList)
+                        try? modelContext.save()
+                    }
                     dismiss()
                 }
             }

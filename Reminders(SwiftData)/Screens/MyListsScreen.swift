@@ -13,6 +13,7 @@ struct MyListsScreen: View {
     @Query private var myLists: [MyList]
 
     @State private var isPresented = false
+    @State private var selectedList: MyList?
 
     var body: some View {
         List {
@@ -24,12 +25,14 @@ struct MyListsScreen: View {
                 NavigationLink {
                     MyListDetailScreen(myList: myList)
                 } label: {
-                    HStack {
-                        Image(systemName: "line.3.horizontal.circle.fill")
-                            .font(.system(size: 32))
-                            .foregroundStyle(Color(hex: myList.colorCode))
-                        Text(myList.name)
-                    }
+                    MyListCellView(myList: myList)
+                        .contentShape(Rectangle())
+                        .onTapGesture {
+                            selectedList = myList
+                        }
+                        .onLongPressGesture(minimumDuration: 0.5) {
+                            print("OnLongGesture")
+                        }
                 }
             }
             .onDelete(perform: deleteCategories)
@@ -42,6 +45,9 @@ struct MyListsScreen: View {
                     .frame(maxWidth: .infinity, alignment: .trailing)
             }
             .listRowSeparator(.hidden)
+        }
+        .navigationDestination(item: $selectedList) { myList in
+            Text(myList.name)
         }
         .listStyle(.plain)
         .sheet(isPresented: $isPresented) {
@@ -65,3 +71,5 @@ struct MyListsScreen: View {
     }
     .modelContainer(previewContainer)
 }
+
+

@@ -34,6 +34,13 @@ struct MyListDetailScreen: View {
         reminder.persistentModelID == selectedReminder?.persistentModelID
     }
 
+    private func deleteReminder(offsets: IndexSet) {
+        withAnimation {
+            offsets.map { myList.reminders[$0] }.forEach(modelContext.delete)
+            try? modelContext.save()
+        }
+    }
+
     var body: some View {
         VStack {
             List {
@@ -88,13 +95,6 @@ struct MyListDetailScreen: View {
                 saveReminder()
             }
             .disabled(!isFormValid)
-        }
-    }
-
-    private func deleteReminder(offsets: IndexSet) {
-        withAnimation {
-            offsets.map { myList.reminders[$0] }.forEach(modelContext.delete)
-            try? modelContext.save()
         }
     }
 }

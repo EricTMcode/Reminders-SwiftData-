@@ -23,6 +23,7 @@
 		07DFC1F82D6CC29000FBADBF /* ReminderEditScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07DFC1F72D6CC29000FBADBF /* ReminderEditScreen.swift */; };
 		07DFC1FA2D6E0E5800FBADBF /* Date+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07DFC1F92D6E0E5800FBADBF /* Date+Extensions.swift */; };
 		07DFC1FD2D6E10BB00FBADBF /* Delay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07DFC1FC2D6E10BB00FBADBF /* Delay.swift */; };
+		07DFC1FF2D6F5CC500FBADBF /* MyListCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07DFC1FE2D6F5CC500FBADBF /* MyListCellView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,6 +44,7 @@
 		07DFC1F72D6CC29000FBADBF /* ReminderEditScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderEditScreen.swift; sourceTree = "<group>"; };
 		07DFC1F92D6E0E5800FBADBF /* Date+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extensions.swift"; sourceTree = "<group>"; };
 		07DFC1FC2D6E10BB00FBADBF /* Delay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Delay.swift; sourceTree = "<group>"; };
+		07DFC1FE2D6F5CC500FBADBF /* MyListCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyListCellView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +114,7 @@
 			children = (
 				07C0BF402D675A65002EFF73 /* ColorPickerView.swift */,
 				07DFC1F52D6CB61100FBADBF /* RemindersCellView.swift */,
+				07DFC1FE2D6F5CC500FBADBF /* MyListCellView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -225,6 +228,7 @@
 				07C0BF492D676317002EFF73 /* Color+Extensions.swift in Sources */,
 				07C0BF3E2D675983002EFF73 /* AddMyListScreen.swift in Sources */,
 				07C0BF412D675A65002EFF73 /* ColorPickerView.swift in Sources */,
+				07DFC1FF2D6F5CC500FBADBF /* MyListCellView.swift in Sources */,
 				07C0BF462D67615B002EFF73 /* PreviewContainer.swift in Sources */,
 				07DFC1C22D68BE3000FBADBF /* MyListDetailScreen.swift in Sources */,
 				07DFC1FD2D6E10BB00FBADBF /* Delay.swift in Sources */,

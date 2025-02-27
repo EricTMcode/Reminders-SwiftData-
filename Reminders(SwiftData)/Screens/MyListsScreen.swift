@@ -190,11 +190,19 @@ struct MyListsScreen: View {
     }
 }
 
-#Preview { @MainActor in
+#Preview("Light Mode") { @MainActor in
     NavigationStack {
         MyListsScreen()
     }
     .modelContainer(previewContainer)
+}
+
+#Preview("Dark Mode") { @MainActor in
+    NavigationStack {
+        MyListsScreen()
+    }
+    .modelContainer(previewContainer)
+    .environment(\.colorScheme, .dark)
 }
 
 

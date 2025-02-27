@@ -15,7 +15,7 @@ struct ReminderListView: View {
     @State private var selectedReminder: Reminder? = nil
     @State private var showReminderEditScreen = false
 
-    private let delay = Delay()
+    @State private var reminderIdAndDelay: [PersistentIdentifier: Delay] = [ : ]
 
     private func deleteReminder(offsets: IndexSet) {
         withAnimation {
@@ -30,9 +30,20 @@ struct ReminderListView: View {
                 RemindersCellView(reminder: reminder) { event in
                     switch event {
                     case .onChecked(let reminder, let checked):
-                        delay.cancel()
-                        delay.performWork {
-                            reminder.isCompleted = checked
+
+                        // get the delay from the dictionary
+                        var delay = reminderIdAndDelay[reminder.persistentModelID]
+                        if let delay {
+                            // cancel
+                            delay.cancel()
+                            reminderIdAndDelay.removeValue(forKey: reminder.persistentModelID)
+                        } else {
+                            // create a new delay and add to the dictionary
+                            delay = Delay()
+                            reminderIdAndDelay[reminder.persistentModelID] = delay
+                            delay?.performWork {
+                                reminder.isCompleted = checked
+                            }
                         }
                     case .onSelect(let reminder):
                         selectedReminder = reminder

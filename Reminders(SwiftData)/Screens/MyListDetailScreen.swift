@@ -17,8 +17,6 @@ struct MyListDetailScreen: View {
     @State private var selectedReminder: Reminder?
     @State private var showReminderEditScreen = false
 
-    private let delay = Delay()
-
     private var isFormValid: Bool {
         !reminderTitle.isEmptyOrWhitespace
     }

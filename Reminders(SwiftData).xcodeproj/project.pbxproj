@@ -25,6 +25,7 @@
 		07DFC1FD2D6E10BB00FBADBF /* Delay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07DFC1FC2D6E10BB00FBADBF /* Delay.swift */; };
 		07DFC1FF2D6F5CC500FBADBF /* MyListCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07DFC1FE2D6F5CC500FBADBF /* MyListCellView.swift */; };
 		07DFC2012D6F6A6300FBADBF /* ReminderStatsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07DFC2002D6F6A6300FBADBF /* ReminderStatsView.swift */; };
+		07DFC2032D6F716200FBADBF /* ReminderListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07DFC2022D6F716100FBADBF /* ReminderListView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -47,6 +48,7 @@
 		07DFC1FC2D6E10BB00FBADBF /* Delay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Delay.swift; sourceTree = "<group>"; };
 		07DFC1FE2D6F5CC500FBADBF /* MyListCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyListCellView.swift; sourceTree = "<group>"; };
 		07DFC2002D6F6A6300FBADBF /* ReminderStatsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderStatsView.swift; sourceTree = "<group>"; };
+		07DFC2022D6F716100FBADBF /* ReminderListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderListView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,6 +120,7 @@
 				07DFC1F52D6CB61100FBADBF /* RemindersCellView.swift */,
 				07DFC1FE2D6F5CC500FBADBF /* MyListCellView.swift */,
 				07DFC2002D6F6A6300FBADBF /* ReminderStatsView.swift */,
+				07DFC2022D6F716100FBADBF /* ReminderListView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -225,6 +228,7 @@
 				07DFC1F62D6CB61100FBADBF /* RemindersCellView.swift in Sources */,
 				07DFC1C42D68C24F00FBADBF /* String+Extensions.swift in Sources */,
 				07DFC2012D6F6A6300FBADBF /* ReminderStatsView.swift in Sources */,
+				07DFC2032D6F716200FBADBF /* ReminderListView.swift in Sources */,
 				07C0BF3C2D67581A002EFF73 /* MyListsScreen.swift in Sources */,
 				07DFC1FA2D6E0E5800FBADBF /* Date+Extensions.swift in Sources */,
 				07DFC1F82D6CC29000FBADBF /* ReminderEditScreen.swift in Sources */,

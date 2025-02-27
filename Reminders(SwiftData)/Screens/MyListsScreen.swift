@@ -97,10 +97,6 @@ struct MyListsScreen: View {
 
     var body: some View {
         List {
-            Text("My Lists")
-                .font(.largeTitle)
-                .bold()
-
             VStack {
                 HStack {
                     ReminderStatsView(
@@ -161,15 +157,15 @@ struct MyListsScreen: View {
             }
             .listRowSeparator(.hidden)
         }
+        .navigationTitle("My Lists")
         .navigationDestination(item: $selectedList) { myList in
             MyListDetailScreen(myList: myList)
         }
         .navigationDestination(item: $reminderStatsType) { reminderStatsType in
             NavigationStack {
-                List(reminders(for: reminderStatsType)) { reminder in
-                    Text(reminder.title)
-                }
+                ReminderListView(reminders: reminders(for: reminderStatsType))
                 .navigationTitle(reminderStatsType.title)
+                .navigationBarTitleDisplayMode(.large)
             }
         }
         .listStyle(.plain)

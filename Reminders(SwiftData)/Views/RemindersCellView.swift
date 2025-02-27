@@ -11,14 +11,12 @@ import SwiftData
 enum ReminderCellEvents {
     case onChecked(Reminder, Bool)
     case onSelect(Reminder)
-//    case onInfoSelected(Reminder)
 }
 
 struct RemindersCellView: View {
 
 
     let reminder: Reminder
-//    let isSelected: Bool
     let onEvent: (ReminderCellEvents) -> Void
 
     @State private var checked = false
@@ -67,11 +65,6 @@ struct RemindersCellView: View {
             .frame(maxWidth: .infinity, alignment: .leading)
 
             Spacer()
-//            Image(systemName: "info.circle.fill")
-//                .opacity(isSelected ? 1 : 0 )
-//                .onTapGesture {
-//                    onEvent(.onInfoSelected(reminder))
-//                }
         }
         .contentShape(Rectangle())
         .onTapGesture {
@@ -85,7 +78,7 @@ struct ReminderCelleViewContainer: View {
     @Query(sort: \Reminder.title) private var reminders: [Reminder]
 
     var body: some View {
-        RemindersCellView(reminder: reminders[0]/*, isSelected: false*/) { _ in }
+        RemindersCellView(reminder: reminders[0]) { _ in }
     }
 }
 

@@ -89,7 +89,7 @@ struct MyListsScreen: View {
         case .scheduled:
             return scheduleReminders
         case .all:
-            return reminders
+            return inCompleteReminders
         case .completed:
             return completedReminders
         }
@@ -118,7 +118,7 @@ struct MyListsScreen: View {
                     ReminderStatsView(
                         icon: "tray.circle.fill",
                         title: "All",
-                        count: reminders.count
+                        count: inCompleteReminders.count
                     )
                     .onTapGesture {
                         reminderStatsType = .all
@@ -165,7 +165,6 @@ struct MyListsScreen: View {
             NavigationStack {
                 ReminderListView(reminders: reminders(for: reminderStatsType))
                 .navigationTitle(reminderStatsType.title)
-                .navigationBarTitleDisplayMode(.large)
             }
         }
         .listStyle(.plain)

@@ -26,6 +26,7 @@
 		07DFC1FF2D6F5CC500FBADBF /* MyListCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07DFC1FE2D6F5CC500FBADBF /* MyListCellView.swift */; };
 		07DFC2012D6F6A6300FBADBF /* ReminderStatsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07DFC2002D6F6A6300FBADBF /* ReminderStatsView.swift */; };
 		07DFC2032D6F716200FBADBF /* ReminderListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07DFC2022D6F716100FBADBF /* ReminderListView.swift */; };
+		07DFC2062D70AF5000FBADBF /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07DFC2052D70AF5000FBADBF /* NotificationManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -49,6 +50,7 @@
 		07DFC1FE2D6F5CC500FBADBF /* MyListCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyListCellView.swift; sourceTree = "<group>"; };
 		07DFC2002D6F6A6300FBADBF /* ReminderStatsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderStatsView.swift; sourceTree = "<group>"; };
 		07DFC2022D6F716100FBADBF /* ReminderListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderListView.swift; sourceTree = "<group>"; };
+		07DFC2052D70AF5000FBADBF /* NotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,6 +92,7 @@
 		07C0BF352D6757FB002EFF73 /* Reminders(SwiftData) */ = {
 			isa = PBXGroup;
 			children = (
+				07DFC2042D70AF3F00FBADBF /* Managers */,
 				07DFC1FB2D6E10B200FBADBF /* Utils */,
 				07C0BF342D6757FB002EFF73 /* Reminders_SwiftData_App.swift */,
 				07C0BF472D67630B002EFF73 /* Extensions */,
@@ -150,6 +153,14 @@
 				07DFC1FC2D6E10BB00FBADBF /* Delay.swift */,
 			);
 			path = Utils;
+			sourceTree = "<group>";
+		};
+		07DFC2042D70AF3F00FBADBF /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				07DFC2052D70AF5000FBADBF /* NotificationManager.swift */,
+			);
+			path = Managers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -237,6 +248,7 @@
 				07C0BF3E2D675983002EFF73 /* AddMyListScreen.swift in Sources */,
 				07C0BF412D675A65002EFF73 /* ColorPickerView.swift in Sources */,
 				07DFC1FF2D6F5CC500FBADBF /* MyListCellView.swift in Sources */,
+				07DFC2062D70AF5000FBADBF /* NotificationManager.swift in Sources */,
 				07C0BF462D67615B002EFF73 /* PreviewContainer.swift in Sources */,
 				07DFC1C22D68BE3000FBADBF /* MyListDetailScreen.swift in Sources */,
 				07DFC1FD2D6E10BB00FBADBF /* Delay.swift in Sources */,

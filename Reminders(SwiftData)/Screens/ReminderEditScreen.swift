@@ -29,6 +29,8 @@ struct ReminderEditScreen: View {
         reminder.reminderTime = showTime ? reminderTime : nil
         try?modelContext.save()
 
+        // Schedule a local notification
+        NotificationManager.scheduleNotification(userData: UserData(title: reminder.title, body: reminder.notes, date: reminder.reminderDate, time: reminder.reminderTime))
     }
 
     private var isFormValid: Bool {
@@ -107,18 +109,18 @@ struct ReminderEditScreen: View {
     }
 }
 
-struct ReminderEditScreenContainer: View {
-
-    @Query(sort: \Reminder.title) private var reminders: [Reminder]
-
-    var body: some View {
-        ReminderEditScreen(reminder: reminders[0])
-    }
-}
-
-#Preview { @MainActor in
-    NavigationStack {
-        ReminderEditScreenContainer()
-    }
-    .modelContainer(previewContainer)
-}
+//struct ReminderEditScreenContainer: View {
+//
+//    @Query(sort: \Reminder.title) private var reminders: [Reminder]
+//
+//    var body: some View {
+//        ReminderEditScreen(reminder: reminders[0])
+//    }
+//}
+//
+//#Preview { @MainActor in
+//    NavigationStack {
+//        ReminderEditScreenContainer()
+//    }
+//    .modelContainer(previewContainer)
+//}

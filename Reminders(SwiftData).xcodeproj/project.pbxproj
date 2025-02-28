@@ -92,9 +92,9 @@
 		07C0BF352D6757FB002EFF73 /* Reminders(SwiftData) */ = {
 			isa = PBXGroup;
 			children = (
+				07C0BF342D6757FB002EFF73 /* Reminders_SwiftData_App.swift */,
 				07DFC2042D70AF3F00FBADBF /* Managers */,
 				07DFC1FB2D6E10B200FBADBF /* Utils */,
-				07C0BF342D6757FB002EFF73 /* Reminders_SwiftData_App.swift */,
 				07C0BF472D67630B002EFF73 /* Extensions */,
 				07C0BF422D676057002EFF73 /* Models */,
 				07C0BF3F2D675A4C002EFF73 /* Views */,

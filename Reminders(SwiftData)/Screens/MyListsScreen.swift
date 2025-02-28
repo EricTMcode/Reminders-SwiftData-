@@ -95,6 +95,13 @@ struct MyListsScreen: View {
         }
     }
 
+    private func deleteCategories(offsets: IndexSet) {
+        withAnimation {
+            offsets.map { myLists[$0] }.forEach(modelContext.delete)
+            try? modelContext.save()
+        }
+    }
+
     var body: some View {
         List {
             VStack {
@@ -179,13 +186,6 @@ struct MyListsScreen: View {
                     AddMyListScreen(myList: myList)
                 }
             }
-        }
-    }
-    
-    private func deleteCategories(offsets: IndexSet) {
-        withAnimation {
-            offsets.map { myLists[$0] }.forEach(modelContext.delete)
-            try? modelContext.save()
         }
     }
 }

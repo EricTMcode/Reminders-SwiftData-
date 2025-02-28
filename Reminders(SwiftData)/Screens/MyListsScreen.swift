@@ -34,6 +34,8 @@ enum ReminderStatsType: Int, Identifiable {
 
 struct MyListsScreen: View {
     @Environment(\.modelContext) private var modelContext
+    @Environment(\.colorScheme) private var colorScheme
+
     @Query private var myLists: [MyList]
     
     @State private var isPresented = false
@@ -41,6 +43,8 @@ struct MyListsScreen: View {
 
     @State private var actionSheet: MyListScreenSheets?
     @State private var reminderStatsType: ReminderStatsType?
+
+    @State private var search: String = ""
 
     @Query private var reminders: [Reminder]
 
@@ -80,6 +84,12 @@ struct MyListsScreen: View {
 
     private var completedReminders: [Reminder] {
         reminders.filter { $0.isCompleted }
+    }
+
+    private var searchResults: [Reminder] {
+        reminders.filter {
+            $0.title.lowercased().contains(search.lowercased()) && !$0.isCompleted
+        }
     }
 
     private func reminders(for type: ReminderStatsType) -> [Reminder] {
@@ -163,6 +173,15 @@ struct MyListsScreen: View {
                     .frame(maxWidth: .infinity, alignment: .trailing)
             }
             .listRowSeparator(.hidden)
+        }
+        .searchable(text: $search)
+        .overlay(alignment: .center) {
+            if !search.isEmpty {
+                ReminderListView(reminders: searchResults)
+                    .frame(maxWidth: .infinity, maxHeight: .infinity)
+                    .background(colorScheme == .dark ? .black : .white)
+
+            }
         }
         .navigationTitle("My Lists")
         .navigationDestination(item: $selectedList) { myList in
